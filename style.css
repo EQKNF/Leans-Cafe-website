@@ -1,0 +1,45 @@
+:root {
+  --primary-color: #ddcde1;
+  --secondary-color: rgb(167, 138, 237);
+  --tertiary-color: rgb(125, 98, 234);
+  --black: #000000;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --font-1: "Roboto", sans-serif;
+  --font-2: "Open Sans", sans-serif;
+  --font-3: "Montserrat", sans-serif;
+}
+
+/*
+#ccb78a
+#040404
+#5e4f39
+#7c7c7c
+#747374
+#2b1c0e
+#2b1c0e
+#2b1c0e
+#2b1c0e
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-1);
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+  background: var(--primary-color);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+}
+
+body {
+  background-color: beige;
+  overflow-x: hidden;
+}
