@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #ccb78a;
+  --primary-color: #89d36c;
   --secondary-color: #040404;
-  --tertiary-color: #5e4f39;
+  --tertiary-color: #7c906a;
   --quaternary-color: #7c7c7c;
   --quinary-color: #747374;
   --senary-color: #2b1c0e;
@@ -52,6 +52,7 @@ body {
   margin: 0 auto;
   max-width: var(--max-width);
   max-height: 100px;
+  z-index: 999;
 }
 
 .sidebar-btn {
@@ -94,6 +95,9 @@ body {
 
 #logo-svg {
   width: 200px;
+  transition: all 0.2s ease;
+  user-select: none;
+  cursor: pointer;
 }
 
 .nav-list {
@@ -109,24 +113,36 @@ body {
 
 .nav-list li a {
   font-size: 1.2rem;
-  font-weight: bold;
+  letter-spacing: 1px;
+  font-weight: 500;
   text-decoration: none;
   color: var(--black);
 }
 
+.nav-list li a:hover {
+  color: var(--white);
+}
+
 .sidebar-container {
-  position: absolute;
+  position: fixed;
   top: 100px;
   right: 0px;
   width: 50%;
   height: 100%;
+  z-index: 999;
   background-color: var(--tertiary-color);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
   transform: translateX(100%);
 }
 
 .sidebar-toggle-active {
   transform: translateX(0px);
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-content .nav-list {
@@ -136,13 +152,56 @@ body {
 }
 
 .sidebar-content .nav-list li {
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+}
+
+.sidebar-sep-line {
+  width: 60%;
+  height: 1px;
+  background-color: var(--black);
+  align-self: center;
+}
+
+.find-us {
+  padding: 3rem 1rem;
 }
 
 .main-container {
+  padding-top: 130px;
   padding-left: 40px;
   padding-right: 40px;
-  height: 100vh;
+  height: 200vh;
+}
+
+.to-the-top-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  margin: 5px;
+  background-color: darkgrey;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.1s;
+  transition: transform 0.3s ease;
+  transform: translateY(100px);
+  user-select: none;
+  z-index: 3;
+  cursor: pointer;
+}
+.to-the-top-btn:hover {
+  background-color: grey;
+}
+
+.to-the-top-btn.show {
+  transform: translateY(0px);
+}
+
+.to-the-top-btn span {
+  color: var(--black);
+  text-decoration: none;
+  padding: 8px;
+  font-size: 2rem;
+  top: calc();
 }
 
 @media (max-width: 700px) {

@@ -28,22 +28,12 @@ const closeSidebar = (event) => {
   }
 };
 
-const navTabs = () => {
-  const buttons = document.querySelectorAll(
-    ".sidebar-tab-categories-links button"
-  );
+const toTheTopBtnShow = () => {
+  const toTheTopBtn = document.getElementById("to-the-top-btn");
 
-  buttons.forEach((button, index) => {
-    button.addEventListener("click", () => {
-      const tabs = document.querySelectorAll(".sidebar-main-tabs > div");
-      tabs.forEach((tab, tabIndex) => {
-        tab.style.display = index === tabIndex ? "block" : "none";
-      });
-
-      buttons.forEach((btn) => {
-        btn.style.color = btn === button ? "var(--black)" : "var(--white)";
-      });
-    });
+  window.addEventListener("scroll", () => {
+    const shouldShow = window.scrollY > window.innerHeight * 0.2;
+    toTheTopBtn.classList.toggle("show", shouldShow);
   });
 };
 
@@ -52,7 +42,7 @@ const app = () => {
     event.stopPropagation();
     toggleSidebar();
   });
-  navTabs();
+  toTheTopBtnShow();
 };
 
 app();
