@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #89d36c;
+  --primary-color: #324b29;
   --secondary-color: #040404;
   --tertiary-color: #7c906a;
   --quaternary-color: #7c7c7c;
@@ -170,7 +170,7 @@ body {
   padding-top: 130px;
   padding-left: 40px;
   padding-right: 40px;
-  height: 200vh;
+  height: 50vh;
 }
 
 .to-the-top-btn {
@@ -202,6 +202,58 @@ body {
   padding: 8px;
   font-size: 2rem;
   top: calc();
+}
+
+.footer-container {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--primary-color);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 30px 0;
+  text-wrap: nowrap;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding-right: 40px;
+}
+
+.footer-content li {
+  margin: 10px 0;
+}
+
+.footer-content li a {
+  color: var(--black);
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.footer-content h4 {
+  color: var(--black);
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.footer-services {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-social-list img {
+  height: 20px;
+  background-color: var(--white);
+}
+
+.footer-logo {
+  align-self: flex-end;
 }
 
 @media (max-width: 700px) {
